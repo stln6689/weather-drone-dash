@@ -1,9 +1,0 @@
-Humidity: 48.48 %
-Temperature: 24.31 °C
-Pressure: 1017.94 hPa
-UV: 7 Index
-
-Humidity: 44.81 %
-Temperature: 23.21 °C
-Pressure: 1013.72 hPa
-UV: 6 Index
