@@ -1,0 +1,308 @@
+/* -------- DEFINING FONT FOR ENTIRE WEBSITE -------- */
+@font-face {
+  font-family: 'GenericG50';
+  src: url('/CSS/fonts/Generic-G50-CC-Typic-DEMO.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'GenericG50';
+}
+/* -------- END OF DEFINING FONT FOR ENTIRE WEBSITE -------- */
+
+/* -------- DEFINING OTHER GENERAL STYLES -------- */
+/* General Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* General paragraph Styles */
+p {
+  margin-top: 10px;  /* Space above the paragraph */
+  margin-bottom: 15px;  /* Space below the paragraph */
+  margin-left: 20px;  /* Space on the left */
+  margin-right: 20px;  /* Space on the right */
+  line-height: 1; /* Keeps spacing consistent */
+}
+
+/* General list Styles */
+li {
+  line-height: 1.5; /* Keeps spacing consistent */
+  margin-right: 20px;
+}
+
+/* embedding link into image adds extra space and messes up margins */
+/* this basically cancels it out */
+a img {
+  margin-top: -15px;
+  margin-bottom: -20px;
+}
+
+/* customizing color of clickable text with links */
+a {
+  color: rgb(121, 168, 127);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* -------- END OF DEFINING OTHER GENERAL STYLES -------- */
+
+/* 2. Main Location & Temperature */
+h2, h1 {
+  color: #000;
+}
+
+/* 3. Weather Image Placeholder */
+/* You can add a class or ID later to handle the dynamic weather image */
+
+/* -------- LEFT FIXED SIDEBAR AND CONTROL CENTER -------- */
+.control-center {
+  position: fixed;  /* Keeps it fixed on the screen */
+  top: 0;           /* Aligns to the top */
+  left: 0;          /* Aligns to the left */
+  width: 60px;      /* Adjust width as needed */
+  height: 100;    /* Full viewport height */
+  background-color: #d3d3d3; /* Sidebar background color */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Style for icons */
+.control-center a {
+  display: block; /* Makes the entire area clickable */
+  margin: 15px 0; /* Space between icons */
+}
+
+.control-center img {
+  width: 50px;  /* Adjust icon size */
+  height: 50px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Hover effect */
+.control-center img:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.control-center a:hover {
+  background-color: rgba(255, 255, 255, 0.4); /* Brighter background on hover */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Bottom Control Center */
+.control-center-bottom {
+  position: fixed;
+  top: 350px; /* Starts right below the first control center */
+  left: 0;
+  width: 60px;
+  height: 100; /* Takes up the remaining screen height */
+  background-color: #d3d3d3; /* Different shade for separation */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers everything */
+  justify-content: center; /* Ensures proper spacing */
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.control-center-bottom a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Make sure it fits inside the sidebar */
+  text-align: center;
+  padding: 10px 0;
+}
+.control-center-bottom img {
+  width: 50px;  /* Adjust icon size */
+  height: 50px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Hover effect */
+.control-center-bottom img:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.control-center-bottom a:hover {
+  background-color: rgba(255, 255, 255, 0.4); /* Brighter background on hover */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+.control-center-bottom a {
+  text-decoration: none; /* Removes underline */
+  color: inherit; /* Keeps text color same as the surrounding text */
+}
+/* -------- END OF LEFT FIXED SIDEBAR AND CONTROL CENTER -------- */
+
+
+/* ----------- OTHER BLOCKS ------------- */
+
+.headerblock {
+  background-color: #fff; /* White background */
+  border-radius: 15px;
+  padding: 10px;
+  width: 80%;
+  margin: 20px 0;
+  margin-left: 110px;
+  margin-right: 10px;
+  margin-bottom: -10px; /* Reduce bottom space */
+  display: flex;
+  flex-direction: column; /* Stack city name and temperature */
+  align-items: flex-start;
+}
+
+/* Reduce the space between "Irvine, CA" and the temperature */
+.headerblock h2 {
+  margin-bottom: -10px; /* Reduce space below city name */
+}
+
+/* Ensures the temperature and image align properly */
+.weather-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Stretch across the block */
+}
+
+/* Keep temperature text stacked neatly */
+.weather-text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Adjust the weather image */
+#weather-image {
+  width: 100px;
+  height: 100px;
+  display: none; /* Hide by default */
+  margin-left: auto; /* Push image to the right */
+  margin-top: -40px; /* Move closer to city name */
+}
+
+#humidity-image {
+  width: 150px;
+  height: auto;
+  max-width: 100%;
+}
+
+.container {
+  max-width: 80%; /* Limits the text width to 80% of the screen */
+  border-radius: 15px;
+  margin: 0 auto; /* Centers it on the page */
+  padding: 0 5vw; /* Adds consistent padding relative to the viewport width */
+  background-color: #d3d3d3;
+}
+
+.forecast-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust spacing as needed */
+}
+
+.forecast-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 80px; /* Ensures even spacing */
+}
+
+.forecast-image {
+  width: 50px;
+  height: 50px;
+  margin: 5px 0;
+}
+
+.time {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.temp {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.status {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.block1 {
+  background-color: #d3d3d3;  /* light grey background */
+  border-radius: 15px;
+  padding: 10px;
+  margin: 20px 0;
+  margin-left: 110px;
+  margin-right: 10px;
+  width: 90%;
+  max-width: 1200px; /* Adjust as needed */
+}
+
+.block1 h4 {
+  color: #000; /* Today's Forecast heading in black */
+}
+
+/* The h5 and h6 elements in Block 1 should have white text */
+.block1 h4,
+.block1 h6 {
+  color: #fff;
+  /* Optionally add a text shadow for contrast, e.g.: */
+  /* text-shadow: 1px 1px 2px rgba(0,0,0,0.5); */
+}
+
+.block1 h2 {
+  text-align: left; /* Aligns the heading to the left */
+  margin-left: 10px; /* Adds some spacing from the left */
+}
+
+.block2 {
+  text-align: center;
+  border-radius: 10px;
+  max-width: 1000px; /* Adjust as needed */
+  margin: auto;
+
+  background-color: #d3d3d3;  /* light grey background */
+  border-radius: 15px;
+  padding: 10px;
+  margin: 20px 0;
+  margin-left: 110px;
+  margin-right: 10px;
+  width: 90%;
+  max-width: 1200px; /* Adjust as needed */
+}
+
+.block2 h2 {
+  text-align: left; /* Aligns the heading to the left */
+  margin-left: 10px; /* Adds some spacing from the left */
+}
+
+html {
+  scroll-behavior: smooth;
+}
